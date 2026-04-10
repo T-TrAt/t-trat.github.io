@@ -3,6 +3,10 @@
 // Styles for the sidebar.
 
 .masthead {
+  display: grid;
+  grid-template-columns: minmax(0, max-content);
+  justify-content: center;
+  justify-items: center;
   text-align: center;
   margin: auto;
   width: 100%;
@@ -13,13 +17,23 @@
   }
 }
 
+.avatar {
+  /* 关键：设置 width 为 0，使其自身图片原始大小不影响 grid 列的计算，
+     然后通过 min-width: 100% 强制撑开到与同级文本相同的宽度 */
+  width: 0;
+  min-width: 100%;
+}
+
 .avatar-image {
-  width: 30%;
+  width: 100%;
   height: auto;
   border-radius: 50%;
   display: block;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
+  /* 确保图片不会超过屏幕宽高 */
+  max-width: 100vw;
+  max-height: 100vh;
+  object-fit: cover;
 }
 
 .masthead-title {
@@ -84,7 +98,5 @@
 }
 
 @media (max-width: $md-width) {
-  .avatar-image {
-    width: 30%;
-  }
+  /* 移除原有的固定百分比缩放，改为统一的自适应策略 */
 }

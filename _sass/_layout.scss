@@ -41,6 +41,15 @@ footer {
     margin-left: 25%;
   }
 
+  /* 无右侧边栏（TOC）时内容居中于剩余空间 */
+  .no-toc .content {
+    margin-left: 37.5%;
+  }
+
+  .no-toc .sidebar-right {
+    display: none;
+  }
+
   .sidebar-left {
     position: fixed;
     top: 0;
@@ -73,5 +82,10 @@ footer {
 @media (min-width: $md-width) and (max-width: $lg-width) {
   .content {
     width: 75%;
+  }
+
+  /* 保持无侧边栏页面内容在中间宽度占比 */
+  .no-toc .content {
+    width: 50%;
   }
 }
