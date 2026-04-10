@@ -1,9 +1,9 @@
 - title: Email
   url: mailto://wangziyang06@126.com
   icon: fas fa-envelope
-- title: Twitter
-  url: https://twitter.com/
-  icon: fab fa-twitter
 - title: GitHub
-  url: https://github.com/t-trat/t-trat.github.io
-  icon: fab fa-github
+  url: https://github.com/t-trat/
+  icon: fa-brands fa-github
+- title: Bilibili
+  url: https://space.bilibili.com/293620457
+  icon: fa-brands fa-bilibili
