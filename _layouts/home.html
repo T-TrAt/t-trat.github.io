@@ -23,7 +23,8 @@ layout: default
       {%- endif -%}
     </div>
 
-    <p>{{ post.excerpt | strip_html }}</p>
+    {% assign post_summary = post.description | default: post.excerpt %}
+    <p>{{ post_summary | strip_html }}</p>
   </section>
   {% endfor %}
   {%- if jekyll.environment == "production" and site.disqus -%}

@@ -11,7 +11,7 @@ title: About
 
 网名 TrAt 或者 小小小火仔 ，欢迎关注我的社交媒体账号，时不时会发布一些有趣的内容。
 
-本博客基于 **Not Pure Poole** 模板搭建。
+本博客基于 **Jekyll** 和 **Not Pure Poole** 模板搭建。
 
 ---
 
