@@ -4,19 +4,19 @@ title: ImageMagick 教程
 tags: ImageMagick Tutorial
 math: false
 date: 2026-04-18 19:00 +0800
+last_modified_at: 2026-05-02 01:08:25 +0800
 toc: true
-description: ImageMagick 是一款开源的轻量级的图像格式转换命令行工具，替代了很多简单的 GUI 图片操作，易用性极高。
+description: ImageMagick 是一款开源且功能全面的图像处理命令行工具，替代了很多简单的 GUI 图片操作，易用性极高。
 ---
 
 <div style="display: flex; flex-wrap: wrap; gap: 40px; margin-bottom: 20px; align-items: flex-start;">
-
   <div style="flex: 1 1 300px;">
-    <img src="/imgs/imagemagick.webp" alt="ImageMagick图标" style="width: 100%; border-radius: 0px; box-shadow: 0 4px 8px rgba(0,0,0,0.1)">
+    <img src="/imgs/2026-04-18-imagemagick-tutorial/imagemagick.webp" alt="ImageMagick图标" style="width: 100%; border-radius: 0px; box-shadow: 0 4px 8px rgba(0,0,0,0.1)">
   </div>
 
   <div style="flex: 2 1 300px;">
     <p>
-    ImageMagick 是一款开源的轻量级的图像格式转换命令行工具，替代了很多简单的 GUI 图片操作，易用性极高。<br>
+    ImageMagick 是一款开源且功能全面的图像格式转换命令行工具，替代了很多简单的 GUI 图片操作，易用性极高。<br>
     </p>
   </div>
 </div>
@@ -53,7 +53,9 @@ GitHub 仓库：<a href="https://github.com/imagemagick/imagemagick">https://git
 
 官网：<a href="https://github.com/imagemagick/imagemagick">https://github.com/imagemagick/imagemagick</a>
 
-## 常用功能
+## 基本功能
+
+作为一款
 
 概览：
 
@@ -66,33 +68,39 @@ GitHub 仓库：<a href="https://github.com/imagemagick/imagemagick">https://git
 | 裁剪图像     | `magick input.jpg -crop 400x400+0+0 output.jpg` |
 | 模糊         | `magick tiger.jpg -blur 5X5 tiger2.jpg` |
 
-以下是详细介绍。
+我将以我的头像为例介绍 ImageMagick 的基本功能。
+
+<img href="/imgs/2026-04-18-imagemagick-tutorial/base-sample.webp">
+
+该图片是 WebP 格式的。至于为什么是 WebP？因为该格式在现在浏览器解析性能很高，且文件体积比 PNG 小（你也不想因为网卡而加载不出这张 1080x1080 的图片吧）。
 
 ### 查看图片参数
 
 不需要 GUI，我们可以通过`magick identify`直接查看图片的详细参数。
 
 ```bash
-magick identify tiger.jpg
+magick identify trats-avatar.webp
 ```
 
 ```bash
-// 输出
-
+# 输出
+trats-avatar.webp WEBP 1080x1080 1080x1080+0+0 8-bit sRGB 122006B 0.001u 0:00.001
 ```
+
+[这里画张框图]
 
 ### 图像格式转换
 
-该工具可以实现非常便捷的图像格式转换。接下来是操作方法：
+该工具还以实现非常便捷的图像格式转换。接下来是操作方法：
 
 ```bash
-magick xx.png xx.webp  # 将 PNG 文件 xx 转换为 WebP 格式
+magick trats-avatar.webp trats-avatar.png  # WebP 转 PNG 格式
 ```
 
 同理，我们也可以转换到其他格式：
 
 ```bash
-magick xx.png xx.jpg   # 将 PNG 文件 xx 转换为 JPG 格式
+magick trats-avatar.webp trats-avatar.JPG  # WebP 转 JPG 格式
 ```
 
 ---
@@ -112,7 +120,7 @@ find . -name "*png" -print0 | xargs -0 -L1 -I ttt magick ttt ttt.jpg
 
 ### 调整图像大小
 
-将 input.jpg 调整为 800x600 的尺寸：
+将 input.jpg 调整为 180x180 的尺寸：
 
 ```bash
 magick input.jpg -resize 800x600 output.jpg
@@ -144,9 +152,9 @@ magick input.jpg -rotate -60 output.jpg
 magick input.jpg -crop 400x400+0+0 output.jpg
 ```
 
-400x400 表示裁剪后的尺寸，+0+0 表示裁切起点的偏移量。坐标系以左上角为原点，右下为正。
+400x400 表示裁剪后的尺寸，+0+0 表示裁切起点的偏移量。坐标系以左上角为原点，右向下向为正。
 
-像调整图片大小一样，裁切单位也可以是百分比：
+像调整图片大小一样，裁切单位也可以是百分比。对于裁 1/2 1/4 这种需求来说，百分比还是更方便的。
 
 ```bash
 magick input.jpg -crop 50%x50%+0+0 output.jpg
@@ -162,13 +170,13 @@ magick tiger.jpg -blur 5X5 tiger2.jpg
 
 ## 高级功能
 
-ImageMagick 总共有以下参数：
+高级功能并不常用。比如实际上 ImageMagick 还适配移动端的操作系统，以及 ImageMagick 的所有指令都有很多参数可以调控。 
 
-
+具体内容详见<a href="https://imagemagick.org/">官网</a>里面列出的功能列表。
 
 **-quality 参数**
 
-转换指令中，参数 `-quality` 用于指定转换过程中保留图像细节的程度。`-quality` 的数值为 0-100%，缺省时默认为 92%.
+转换指令中，参数 `-quality` 用于指定转换过程中保留图像细节的程度。`-quality` 的数值为 0-100%，缺省时默认为 92%. 也就是说默认的图像转换是有损的。
 
 `-quality` 的计算方法没有固定的标准，是一个参考数值，具体需要看这个工具是怎么实现的。*
 

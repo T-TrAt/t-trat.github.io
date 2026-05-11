@@ -3,3 +3,16 @@
 
 - 参考栏目的字号和字体也可以调小。
   可以独立于文章设置参考栏目，也可以在正文后面编写有指定样式的参考。
+
+- 基础图标适配
+  apple-touch-icon : 用于 iOS 主屏幕图标和 Safari 个人收藏图标。
+  mask-icon : 用于 macOS Safari 的固定标签页（Pinned Tab）。它必须是一个单色的 SVG 矢量图， color 属性决定了图标被激活或悬浮时的颜色。
+
+- Web App 体验适配（当用户将网站“添加到主屏幕”时）
+  apple-mobile-web-app-title : 自定义添加到主屏幕后的 App 名称（如果不设置，默认会读取 <title> 标签，通常会太长）。
+  apple-mobile-web-app-capable : 开启沉浸式全屏 Web App 模式，隐藏 Safari 的顶部地址栏和底部工具栏。
+  apple-mobile-web-app-status-bar-style : 设置顶部状态栏的样式（可选值： default 默认白底黑字、 black 黑底白字、 black-translucent 沉浸式透明）。
+
+- 现代 Safari 界面适配
+  theme-color : Safari 15 及以上版本会读取这个属性，用来改变浏览器顶部标签栏和沉浸式背景的颜色。可以配合 media 属性分别适配深色和浅色模式。
+- 增加图片题注

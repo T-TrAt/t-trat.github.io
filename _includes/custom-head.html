@@ -5,4 +5,28 @@
   2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
 {% endcomment %}
 
+<!-- 引入字体 -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Fira+Code:wght@300;400;500&display=swap">
+
+<!-- Apple 端图标适配 -->
+<link rel="apple-touch-icon" sizes="180x180" href="/imgs/favicon/apple-touch-icon-180x180.png"> 
 <link rel="icon" type="image/png" href="{{ '/imgs/favicon/favicon-32x32.png' | relative_url }}">
+
+<!-- Apple Web App 体验适配：用户将网站"添加到主屏幕"时的表现 -->
+<meta name="apple-mobile-web-app-title" content="T-TrAt's blog">
+<!-- 添加到主屏幕后的 App 名称，避免默认读取过长的 <title> 标签 -->
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<!-- 开启沉浸式全屏 Web App 模式，隐藏 Safari 地址栏和工具栏 -->
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- 顶部状态栏样式：black-translucent 沉浸式透明，融入 sidebar 深色背景 -->
+
+<!-- 现代 Safari 界面适配：标签栏和沉浸式背景的主题色 -->
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff">
+<!-- 浅色模式标签栏颜色：白色 -->
+
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="rgb(51, 56, 39)">
+<!-- 深色模式标签栏颜色：与 sidebar 背景色一致的深橄榄绿 -->
