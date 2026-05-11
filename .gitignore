@@ -45,5 +45,9 @@ node_modules
 # Ruby gems
 *.gem
 
-# ignore .trae folder
+# 忽略 .trae 文件夹
 .trae/
+
+# 忽略 draw.io 的文件
+*.drawio
+*.drawio.bkp
