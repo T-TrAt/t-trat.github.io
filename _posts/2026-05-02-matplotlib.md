@@ -3,7 +3,7 @@ layout: post
 title: 由浅入深理解 Matplotlib
 tags: Matplotlib Tutorial
 math: false
-date: 2026-5-2 19:00 +0800
+date: 2026-05-02 19:00 +0800
 toc: true
 ---
 

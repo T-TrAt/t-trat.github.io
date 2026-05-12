@@ -48,6 +48,6 @@ node_modules
 # 忽略 .trae 文件夹
 .trae/
 
-# 忽略 draw.io 的文件
+# 忽略 draw.io 文件
 *.drawio
 *.drawio.bkp

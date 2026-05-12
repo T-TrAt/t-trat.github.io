@@ -1,13 +1,20 @@
-// Typography
+//===========================
+// 文件： _type.scss
+// 作者：Ziyang Wang
+// 描述：字体样式设置
+//===========================
+
+
+// 排版
 //
-// Headings, body text, lists, and other misc typographic elements.
+// 标题、正文、列表以及其他杂项排版元素。
 
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: .5rem;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: -0.04em;
-  color: var(--heading-color);
+  margin-bottom: .5rem;          // 底部外边距
+  font-weight: 500;              // 字重（中等粗细）
+  line-height: 1.5;              // 行高
+  letter-spacing: -0.04em;       // 字母间距（稍微紧凑）
+  color: var(--heading-color);   // 文本颜色
 }
 
 h1 {
@@ -49,19 +56,23 @@ p {
           hyphens: auto;
 }
 
+// 列表外边距设置
 ul, ol, dl {
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
+// 定义列表的标题词条加粗
 dt {
   font-weight: bold;
 }
 
+// 定义列表的描述内容底部外边距
 dd {
   margin-bottom: .5rem;
 }
 
+// 水平分割线样式
 hr {
   position: relative;
   margin: var(--spacer-2) 0;
@@ -69,18 +80,21 @@ hr {
   border-top: 1px solid var(--border-color);
 }
 
+// 缩写词样式
 abbr {
   font-size: 85%;
   font-weight: bold;
   color: var(--gray-600);
   text-transform: uppercase;
 
+  // 当带有 title 属性时，鼠标悬浮显示帮助光标并带有底部虚线
   &[title] {
     cursor: help;
     border-bottom: 1px dotted var(--border-color);
   }
 }
 
+// 引用块样式：带有左侧边框及自定义内边距
 blockquote {
   padding: .5rem 1rem;
   margin: .8rem 0;
@@ -91,39 +105,41 @@ blockquote {
     margin-bottom: 0;
   }
 
+  // 在较大屏幕下的响应式内边距
   @media (min-width: $sm-width) {
     padding-right: 5rem;
     padding-left: 1.25rem;
   }
 }
 
+// 图窗/插图元素移除默认外边距
 figure {
   margin: 0;
 }
 
 
-// Markdown footnotes
+// Markdown 脚注
 //
-// See the example content post for an example.
+// 参见示例内容文章获取示例。
 
-// Footnote number within body text
+// 正文中的脚注编号
 a[href^="#fn:"],
-// Back to footnote link
+// 返回脚注的链接
 a[href^="#fnref:"] {
   display: inline-block;
   margin-left: .1rem;
   font-weight: bold;
 }
 
-// List of footnotes
+// 脚注列表容器
 .footnotes {
   margin-top: 2rem;
   font-size: 85%;
 }
 
-// Custom type
+// 自定义排版
 //
-// Extend paragraphs with `.lead` for larger introductory text.
+// 使用 `.lead` 类扩展段落，用于呈现较大的介绍性文本。
 
 .lead {
   font-size: 1.25rem;

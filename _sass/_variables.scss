@@ -1,4 +1,12 @@
+//===========================
+// 文件： _variables.scss
+// 作者：Ziyang Wang
+// 描述：变量总管
+//===========================
+
+
 :root {
+  // 灰阶设置
   --gray-000: #f8f9fa;
   --gray-100: #f1f3f5;
   --gray-200: #e9ecef;
@@ -10,6 +18,7 @@
   --gray-800: #343a40;
   --gray-900: #212529;
 
+  // 基础颜色
   --red: #fa5252;
   --pink: #e64980;
   --grape: #be4bdb;
@@ -26,30 +35,41 @@
   --blue-400: #4dabf7;
   --yellow-100: #fff3bf;
 
-  --body-font: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  // 页面主体与基础排版设置
+  // 使用无衬线字体排版
+  --body-font: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --body-font-size: 16px;
   --body-line-height: 1.5;
   --body-color: var(--gray-700);
   --body-bg: #fff;
 
-  --text-font: Times, "Times New Roman", "Free Serif", "Noto Serif", TimesNewRomanPSMT, "Droid Serif";
-  --heading-font: "Noto Sans SC", "Noto Serif", "Times New Roman", serif;
 
+  // 目前标题与正文字体统一，全部引用 --heading-font
+  --text-font: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --heading-font: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  // 链接
   --link-color: var(--blue);
   --link-hover-color: #1c7ed6;
 
+  // 文本颜色
   --heading-color: var(--gray-900);
 
+  // 边框设置（文章分割线，引用块分割线，代码块边缘线等）
   --border-color: var(--gray-300);
   --border-radius: .50rem;
 
+  // 代码设置
   --code-font: "Fira Code", "Noto Sans SC", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --code-color: var(--grape);
   --code-bg: #f6f8fa;
 
-  --spacer: 1rem;
-  --spacer-2: calc(var(--spacer) * 1.5);
-  --spacer-3: calc(var(--spacer) * 3);
+
+  // 间距（空白）比例系统
+  --spacer: 1rem;                               // 基础间距
+  --spacer-2: calc(var(--spacer) * 1.5);        // 基础间距的 1.5 倍
+  --spacer-3: calc(var(--spacer) * 3);          // 基础间距的 3 倍
 }
 
 @media (prefers-color-scheme: dark) {

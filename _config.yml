@@ -1,11 +1,14 @@
+# 文件：全局配置
+# 作者：Ziyang Wang
+
 # Setup
 title: Ziyang Wang
 description: T-TrAt 的个人博客，分享一些技术笔记。
 url: https://t-trat.github.io
-avatar: /avatar.webp
+avatar: /imgs/avatar.webp
 paginate: 5
 permalink: pretty
-cover_image: /bg.webp
+cover_image: /imgs/bg.webp
 
 # Gems
 plugins:

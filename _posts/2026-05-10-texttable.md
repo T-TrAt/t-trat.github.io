@@ -3,7 +3,7 @@ layout: post
 title: Python 中的 texttable 模块：极简命令行表格输出
 tags: Tutorial
 math: false
-date: 2026-5-2 19:00 +0800
+date: 2026-05-10 19:00 +0800
 ---
 
 Texttable 是 Python 的一款功能和使用都很简单的表格库。该库的功能只有一个——就是打印类似这样的表格：
@@ -58,3 +58,6 @@ print(table.draw())                       # 打印表格
 
 ```
 
+参考
+
+<a href="https://yaoweibin.cn/python%e4%b8%ad%e7%9a%84texttable%e6%a8%a1%e5%9d%97%e6%89%93%e9%80%a0%e4%bc%98%e9%9b%85%e7%9a%84%e5%91%bd%e4%bb%a4%e8%a1%8c%e8%a1%a8%e6%a0%bc%e8%be%93%e5%87%ba/">Python 中的 texttable 模块：打造优雅的命令行表格输出　作者　姚伟斌</a>
