@@ -5,16 +5,20 @@
   可以独立于文章设置参考栏目，也可以在正文后面编写有指定样式的参考。
 
 - 基础图标适配
-  mask-icon : 用于 macOS Safari 的固定标签页（Pinned Tab）。它必须是一个单色的 SVG 矢量图， color 属性决定了图标被激活或悬浮时的颜色。
+  - mask-icon : 用于 macOS Safari 的固定标签页（Pinned Tab）。它必须是一个单色的 
+    SVG 矢量图， color 属性决定了图标被激活或悬浮时的颜色。
 
 - black-translucent 问题
-  apple-mobile-web-app-status-bar-style 的 black-translucent 值，背景没有跟随 side bar 进入深橄榄绿，该设置的跟随逻辑是什么？修改。
+  - apple-mobile-web-app-status-bar-style 的 black-translucent 值，背景没有跟随 
+    side bar 进入深橄榄绿，该设置的跟随逻辑是什么？修改。
 
 - 增加图片题注
 
 - 移动端文字适配
-  移动端竖屏模式下 50% 的显示宽度过窄 (问题主要在于 ipad 端的竖屏模式下依旧采用 side bar 模式，文章宽度 50% 视觉上过窄)。
-  增加文章内容最窄宽度设置。下限为默认字体的 30 个全角字符长度。上限为 50% 或设备宽度。上限优先。
+  - 移动端竖屏模式下 50% 的显示宽度过窄 (问题主要在于 ipad 端的竖屏模式下依旧采
+    用 side bar 模式，文章宽度 50% 视觉上过窄)。
+    增加文章内容最窄宽度设置。下限为默认字体的 30 个全角字符长度。上限为 50% 或
+    设备宽度。上限优先。
 
 - 移动端标题大小
   移动端标题字号过大，减小多级标题的字号差距。

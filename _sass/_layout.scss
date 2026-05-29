@@ -41,7 +41,7 @@ footer {
     margin-left: 25%;
   }
 
-  /* 无右侧边栏（TOC）时内容居中于剩余空间 */
+  /* 无右侧边栏（TOC）时内容居中于剩余空间；中屏自适应宽度规则见下方覆盖 */
   .no-toc .content {
     margin-left: 37.5%;
   }
@@ -84,8 +84,11 @@ footer {
     width: 75%;
   }
 
-  /* 保持无侧边栏页面内容在中间宽度占比 */
+  /* 移动端正文宽度适配：无 TOC 页面在中等宽度竖屏下至少保留约 30 个全角字符的可读宽度 */
+  /* 同时限制正文仍位于左侧栏之外的可用区域内，避免因最小宽度规则引入横向滚动 */
   .no-toc .content {
-    width: 50%;
+    --no-toc-readable-width: min(max(50%, 30em), 75vw);
+    width: var(--no-toc-readable-width);
+    margin-left: calc(25% + (75% - var(--no-toc-readable-width)) / 2);
   }
 }
