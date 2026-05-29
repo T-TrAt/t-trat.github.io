@@ -21,7 +21,7 @@ description: ImageMagick 是一款开源且功能全面的图像处理命令行�
   </div>
 </div>
 
-## 下载方式
+# 下载方式
 
 通过命令行下载：
 
@@ -53,7 +53,7 @@ GitHub 仓库：<a href="https://github.com/imagemagick/imagemagick">https://git
 
 官网：<a href="https://github.com/imagemagick/imagemagick">https://github.com/imagemagick/imagemagick</a>
 
-## 基本功能
+# 基本功能
 
 作为一款
 
@@ -74,7 +74,7 @@ GitHub 仓库：<a href="https://github.com/imagemagick/imagemagick">https://git
 
 该图片是 WebP 格式的。至于为什么是 WebP？因为该格式在现在浏览器解析性能很高，且文件体积比 PNG 小（你也不想因为网卡而加载不出这张 1080x1080 的图片吧）。
 
-### 查看图片参数
+## 查看图片参数
 
 不需要 GUI，我们可以通过`magick identify`直接查看图片的详细参数。
 
@@ -89,7 +89,7 @@ trats-avatar.webp WEBP 1080x1080 1080x1080+0+0 8-bit sRGB 122006B 0.001u 0:00.00
 
 [这里画张框图]
 
-### 图像格式转换
+## 图像格式转换
 
 该工具还以实现非常便捷的图像格式转换。接下来是操作方法：
 
@@ -118,7 +118,7 @@ find . -name "*png" -print0 | xargs -0 -L1 -I ttt magick ttt ttt.jpg
 
 ---
 
-### 调整图像大小
+## 调整图像大小
 
 将 input.jpg 调整为 180x180 的尺寸：
 
@@ -132,7 +132,7 @@ magick input.jpg -resize 800x600 output.jpg
 magick input.jpg -resize 50% output.jpg
 ```
 
-### 翻转和旋转
+## 翻转和旋转
 
 这里展示最常用的顺时针旋转 90°. -rotate 参数默认顺时针旋转。
 
@@ -146,7 +146,7 @@ magick input.jpg -rotate 90 output.jpg
 magick input.jpg -rotate -60 output.jpg
 ```
 
-### 裁剪图像
+## 裁剪图像
 
 ```bash
 magick input.jpg -crop 400x400+0+0 output.jpg
@@ -160,7 +160,7 @@ magick input.jpg -crop 400x400+0+0 output.jpg
 magick input.jpg -crop 50%x50%+0+0 output.jpg
 ```
 
-### 模糊
+## 模糊
 
 ```bash
 magick tiger.jpg -blur 5X5 tiger2.jpg
@@ -168,7 +168,7 @@ magick tiger.jpg -blur 5X5 tiger2.jpg
 
 ---
 
-## 高级功能
+# 高级功能
 
 高级功能并不常用。比如实际上 ImageMagick 还适配移动端的操作系统，以及 ImageMagick 的所有指令都有很多参数可以调控。 
 
@@ -186,7 +186,7 @@ magick xx.png -quality 90% xx.jpg  # 将 PNG 文件 xx 转换为 JPG 格式，�
 
 
 
-## 常见图片格式
+# 附：常见图片格式
 
 | 格式 | 是否有损压缩 | 色彩数 | 是否支持动画 |
 | ---- | --------------------- | ------------------------ | ------------------------- |
@@ -196,7 +196,7 @@ magick xx.png -quality 90% xx.jpg  # 将 PNG 文件 xx 转换为 JPG 格式，�
 | GIF  | 有损                  | 256 色（8 位索引色）     | 支持                      |
 
 
-## 参考
+# 参考
 本文参考以下文章撰写：
 
 <a href="http://xahlee.info/img/imagemagic.html">http://xahlee.info/img/imagemagic.html【ImageMagick Tutorial】</a>
