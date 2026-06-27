@@ -53,5 +53,5 @@ node_modules
 *.drawio.bkp
 
 # 未完成文章
-2026-05-02-matplotlib.md
-2026-04-10-how-to-git.md
+_posts/2026-05-02-matplotlib.md
+_posts/2026-04-10-how-to-git.md
