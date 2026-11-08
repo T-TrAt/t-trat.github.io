@@ -1,7 +1,7 @@
 ---
 layout: "../layouts/Page.astro"
 title: "About"
-description: "北京工业大学计算机与科学专业大三学生，分享技术经验和感兴趣的事物。"
+description: "TrAt 的 blog 分享技术经验和感兴趣的事物。"
 ---
 
 
