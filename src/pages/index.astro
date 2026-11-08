@@ -1,0 +1,73 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import { SITE, HOME, SOCIALS } from "@consts";
+import ArrowCard from "@components/ArrowCard.astro";
+import Link from "@components/Link.astro";
+import { getCollection } from "astro:content";
+
+const blog = (await getCollection("blog"))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
+
+const projects = (await getCollection("projects"))
+  .filter((project) => !project.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
+---
+
+<Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
+  <Container>
+    <aside data-pagefind-ignore>
+      <div class="space-y-16">
+        <section>
+          <h1 class="mb-6 font-semibold text-black dark:text-white">{SITE.TITLE}</h1>
+          <article class="space-y-4">
+            <img src="/imgs/avatar.webp" alt="Ziyang Wang 的头像" width="96" height="96" class="!mx-0 rounded-full" />
+            <p>北京工业大学计算机与科学专业大三学生。</p>
+            <p>本博客用于分享技术经验，以及自己感兴趣的一些东西。</p>
+            <p><Link href="/about">关于我</Link></p>
+          </article>
+        </section>
+
+        <section class="animate space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-y-2">
+            <h2 class="font-semibold text-black dark:text-white">最新文章</h2>
+            <Link href="/blog">查看全部文章</Link>
+          </div>
+          <ul class="not-prose flex flex-col gap-4">
+            {blog.map((post) => <li><ArrowCard entry={post} /></li>)}
+          </ul>
+        </section>
+
+        {projects.length > 0 && (
+          <section class="animate space-y-6">
+            <div class="flex flex-wrap items-center justify-between gap-y-2">
+              <h2 class="font-semibold text-black dark:text-white">最近项目</h2>
+              <Link href="/projects">查看全部项目</Link>
+            </div>
+            <ul class="not-prose flex flex-col gap-4">
+              {projects.map((project) => <li><ArrowCard entry={project} /></li>)}
+            </ul>
+          </section>
+        )}
+
+        <section class="animate space-y-4">
+          <h2 class="font-semibold text-black dark:text-white">联系我</h2>
+          <ul class="not-prose flex flex-wrap gap-2">
+            {SOCIALS.map((social) => (
+              <li class="flex gap-x-2 text-nowrap">
+                <Link href={social.HREF} external aria-label={`${SITE.TITLE} on ${social.NAME}`}>{social.NAME}</Link>
+                {"/"}
+              </li>
+            ))}
+            <li class="line-clamp-1">
+              <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.TITLE}`}>{SITE.EMAIL}</Link>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </aside>
+  </Container>
+</Layout>

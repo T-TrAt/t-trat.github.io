@@ -41,6 +41,13 @@ validation-report.json
 
 # Folders to ignore
 node_modules
+dist/
+.astro/
+.sites-runtime/
+public/pagefind/
+.env
+.env.*
+!.env.example
 
 # Ruby gems
 *.gem
@@ -51,7 +58,5 @@ node_modules
 # 忽略 draw.io 文件
 *.drawio
 *.drawio.bkp
-
-# 未完成文章
-_posts/2026-05-02-matplotlib.md
-_posts/2026-04-10-how-to-git.md
+!public/imgs/2026-05-10-texttable/table-sample.drawio
+!public/imgs/2026-05-10-texttable/.$table-sample.drawio.bkp
