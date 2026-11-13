@@ -5,6 +5,7 @@ import { SITE, HOME, SOCIALS } from "@consts";
 import ArrowCard from "@components/ArrowCard.astro";
 import Link from "@components/Link.astro";
 import { getCollection } from "astro:content";
+import Prose from "@components/Prose.astro";
 
 const blog = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
@@ -23,11 +24,11 @@ const projects = (await getCollection("projects"))
       <div class="space-y-16">
         <section>
           <h1 class="mb-6 font-semibold text-black dark:text-white">{SITE.TITLE}</h1>
-          <article class="space-y-4">
+          <Prose>
             <img src="/imgs/avatar.webp" alt="Ziyang Wang 的头像" width="96" height="96" class="!mx-0 rounded-full" />
             <p>TrAt 的个人博客，分享技术经验以及自己感兴趣的一些东西。</p>
             <p><Link href="/about">关于我</Link></p>
-          </article>
+          </Prose>
         </section>
 
         <section class="animate space-y-6">

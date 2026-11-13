@@ -34,3 +34,18 @@ npm run dev
 - `.gitignore`：忽略依赖、构建产物、本地缓存和环境变量；源码及草稿仍纳入版本管理。
 
 原 `.git` 和提交历史保留，远程 `origin` 为 `https://github.com/T-TrAt/t-trat.github.io.git`。迁移工作不会自动提交或推送。
+
+## 正文和代码排版
+
+正文使用 [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography) 的标准样式，统一入口为 `src/components/Prose.astro`，博客、作品和 About 共用。中文字体与全角标点设置集中在 `src/styles/global.css`。
+
+代码块使用 [Expressive Code](https://expressive-code.com/)，配置集中在 `astro.config.mjs`。继续使用 Markdown 代码围栏即可，代码高亮、复制按钮和深浅主题由库处理。可以选填文件名和高亮行：
+
+````markdown
+```python title="example.py" {2}
+message = "你好，世界！"
+print(message)
+```
+````
+
+不设置文件名或高亮行时，直接写 ` ```python ` 即可；命令行示例使用 `bash` 或 `shell`。无需在正文中添加样式或复制按钮脚本。
