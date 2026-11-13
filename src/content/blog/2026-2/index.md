@@ -2,7 +2,7 @@
 title: "Linux 内存映射与缺页异常分析"
 description: ""
 tags: [""]
-math: false
+math: true
 date: "2026-05-10T19:00:00+08:00"
 ---
 
